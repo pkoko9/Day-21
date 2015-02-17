@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+		<title>Game Template</title>
+		<link rel="stylesheet" href="styles/main.css">
+	</head>
+	<body>
+		
+		<div type="text" id="loading">
+			Menu Screen
+		</div>
+		<nav id="navigation">
+			<button style="button" id="Play">Play</button>
+			<button style="button" id="Leaderboard">Leaderboard</button>
+			<button style="button" id="Settings">Settings</button>
+		</nav>
+		
+		<main id="game">
+			<div class="load-view" id="menu-view">
+<!-- 				<div id="recent-project">
+					My most recent project is <a href="#" id="recent-project-name"></a>
+				</div>
+				<div id="current-position">
+					My current position is <span id="current-position-name"></span>
+				</div> -->
+			</div>
+			<div class="page-view" id="leaderboard-view">
+				<h1>Leaders</h1>
+				<div id="leader-list"></div>
+			</div>
+			<div class="page-view" id="play-view">
+				<h1>Play Screen</h1>
+				<div id="players"></div>
+			</div>
+			<div class="page-view" id="settings-view">
+				<h1>Settings</h1>
+				<div class="form">
+					<h2>Add New Player</h2>
+					<label>
+						Name:
+						<input type="text" id="player-name">
+					</label>
+					<label>
+						Age:
+						<input type="number" id="age">
+					</label>
+					<label>
+						Skill level (1-5, 1=beginner, 5=expert):
+						<input type="number" id="skill-level">
+					</label>
+					<button type="button" id="add-player-button">Add Player</button>
+				</div>
+			</div>
+		</main>
+
+		<script type="text/html" id="project-template">
+			<div class="project">
+				<h3>
+					<a href="<%= url %>"><%= name %></a>
+				</h3>
+				<p><%= description %></p>
+			</div>
+		</script>
+
+		<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="bower_components/underscore/underscore-min.js"></script>
+		<script type="text/javascript" src="bower_components/backbone/backbone.js"></script>
+		<script type="text/javascript" src="scripts/views/appview.js"></script>
+		<script type="text/javascript" src="scripts/views/leaderboardview.js"></script>
+		<script type="text/javascript" src="scripts/views/playview.js"></script>
+		<script type="text/javascript" src="scripts/views/settingsview.js"></script>
+		<script type="text/javascript" src="scripts/main.js"></script>
+
+	</body>
+</html>
+
+
+
+

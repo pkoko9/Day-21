@@ -1,0 +1,11 @@
+.load-view {
+	display: none;
+}
+
+.form label {
+	display: block;
+}
+
+#settings-view {
+	background-color: red;
+}
