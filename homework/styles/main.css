@@ -1,11 +1,31 @@
-.load-view {
-	display: none;
+#button {
+	background-color: #D1CBCB;
+	height: 5em;
+	width: 10em;
+	font-size: 1em;
 }
 
-.form label {
-	display: block;
+.menu a {
+	text-decoration: none;
+	color: black;
+}
+
+#loading-view {
+	font-size: 2em;
 }
 
 #settings-view {
-	background-color: red;
+	font-size: 2em;
+}
+
+#home-view {
+	font-size: 2em;
+}
+
+#leaderboard-view {
+	font-size: 2em;
+}
+
+#play-view {
+	font-size: 2em;
 }

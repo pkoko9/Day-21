@@ -1,57 +1,83 @@
 var AppView = Backbone.View.extend({
-	el: '#game',
+
+	el: '#app',
 	initialize: function() {
-		console.log(ProjectsCollection);
-		this.projects = new ProjectsCollection();
 
-		this.gameView = new GameView({
-			projects: this.projects
-		});
-		this.leaderbordView = new LeaderBoardView({
-			projects: this.projects
-		});
-		this.settingsView = new SettingsView({
-			projects: this.projects
+		// console.log(ProjectsCollection);
+		// this.projects = new ProjectsCollection();
+
+		this.loadingView = new loadingView({
+			
 		});
 
+		this.homeView = new homeView({
+			
+		});
+
+		this.playView = new playView({
+		
+		});
+
+		this.leaderboardView = new leaderboardView({
+			
+		});
+
+		this.settingsView = new settingsView({
+			
+		});
+		
 		var self = this;
 
 		var Router = Backbone.Router.extend({
 			routes: {
-				'home': 	'home',
-				'resume': 	'resume',
-				'projects': 'projects',
-				'admin': 	'admin'
+				'loading': 'loading',
+				'home': 'home',
+				'play': 'play',
+				'leaderboard': 'leaderboard',
+				'settings': 'settings',
+				'': 'loading'
+			},
+
+			loading: function() {
+				console.log('loading...')
+				self.hideAllPages();
+				self.loadingView.$el.show();
 			},
 
 			home: function() {
-				console.log('home');
+				console.log('home')
 				self.hideAllPages();
 				self.homeView.$el.show();
 			},
 
-			resume: function() {
+			play: function() {
+				console.log('play')
 				self.hideAllPages();
-				self.resumeView.$el.show();
+				self.playView.$el.show();
 			},
 
-			projects: function() {
+			leaderboard: function() {
+				console.log('leaderboard')
 				self.hideAllPages();
-				self.projectsView.$el.show();
+				self.leaderboardView.$el.show();
 			},
 
-			admin: function() {
+			settings: function() {
+				console.log('settings')
 				self.hideAllPages();
-				self.adminView.$el.show();
-			}
+				self.settingsView.$el.show();
+			},
+
 		});
 
 		var appRouter = new Router();
 
 		Backbone.history.start();
+
 	},
 
 	hideAllPages: function() {
-		$('.load-view').hide();
+		$('.page-view').hide();
 	}
+
 });

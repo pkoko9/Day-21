@@ -1,6 +1,8 @@
-var leaderBoardView = Backbone.View.extend({
+var leaderboardView = Backbone.View.extend({
+
 	el: '#leaderboard-view',
-	initialize: function(options) {
-		
-	}
+		initialize: function(options) {
+		}
+
+
 });
